@@ -88,7 +88,7 @@ const exec = defineExec();
 function runTask(task, stdin, stdout, stderr) {
   return new Promise((resolve, reject) => {
     // Execute.
-    const cp = exec(`npm run-script ${task}`);
+    const cp = exec(`npm run-script --color=always ${task}`);
 
     // Piping stdio.
     if (stdin) { stdin.pipe(cp.stdin); }
